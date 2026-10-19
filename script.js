@@ -211,40 +211,91 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.
 map.forEach((_,id)=>{const s=document.getElementById(id);if(s)io.observe(s)});})();
 
 
-
-
-/* Contact form: FormSubmit */
+/* Contact form: FormSubmit AJAX */
 (() => {
-  const form = document.getElementById('contactForm');
+  const form = document.getElementById("contactForm");
   if (!form) return;
 
-  const button = document.getElementById('cfSubmit');
-  const status = document.getElementById('cfStatus');
+  const button = document.getElementById("cfSubmit");
+  const label = button?.querySelector(".cf-label");
+  const status = document.getElementById("cfStatus");
 
-  form.addEventListener('submit', (event) => {
-    if (!form.reportValidity()) {
-      event.preventDefault();
-      return;
-    }
+  let submitting = false;
+
+  function showStatus(message, type) {
+    if (!status) return;
+    status.textContent = message;
+    status.className = "cf-status " + type;
+  }
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    if (submitting || !form.reportValidity()) return;
 
     const honeypot = form.querySelector('[name="_honey"]');
-    if (honeypot && honeypot.value.trim() !== '') {
-      event.preventDefault();
-      return;
-    }
 
-    if (button) {
-      button.disabled = true;
-      const label = button.querySelector('.cf-label');
-      if (label) label.textContent = 'SENDING...';
-    }
+    if (honeypot && honeypot.value.trim() !== "") return;
 
-    if (status) {
-      status.textContent = 'Sending your message...';
-      status.className = 'cf-status';
+    submitting = true;
+
+    if (button) button.disabled = true;
+    if (label) label.textContent = "SENDING...";
+
+    showStatus("Sending your message...", "is-sending");
+
+    try {
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+
+      const response = await fetch(
+        "https://formsubmit.co/ajax/amara2004ama@gmail.com",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify(data)
+        }
+      );
+
+      let result;
+
+      try {
+        result = await response.json();
+      } catch {
+        throw new Error("The email service returned an unreadable response.");
+      }
+
+      if (!response.ok || result.success === false) {
+        throw new Error(
+          result.message || "The email service could not accept your message."
+        );
+      }
+
+      showStatus(
+        "Your message was submitted successfully. Thank you for contacting me!",
+        "is-success"
+      );
+
+      form.reset();
+    } catch (error) {
+      console.error("Contact form submission failed:", error);
+
+      showStatus(
+        "Message could not be submitted. Please check your connection or email me directly at amara2004ama@gmail.com.",
+        "is-error"
+      );
+    } finally {
+      submitting = false;
+
+      if (button) button.disabled = false;
+      if (label) label.textContent = "SEND MESSAGE";
     }
   });
 })();
+
 
 
 
