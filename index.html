@@ -115,17 +115,55 @@
 <div class="contact-buttons"><a class="btn btn-gold" href="mailto:amara2004ama@gmail.com"><span>✉</span> SEND A MESSAGE <b>↗</b> </a>
 <a class="btn btn-outline"href="https://www.linkedin.com/in/amaravathi-a-893931335/" target="_blank"  rel="noopener noreferrer">LINKEDIN ↗ </a>
  <a class="btn btn-outline" href="https://github.com/Amara682"target="_blank" rel="noopener noreferrer">GITHUB ↗ </a></div>
-<form id="contactForm" class="contact-form" action="https://formsubmit.co/amara2004ama@gmail.com" method="POST" novalidate>
-        <h3>Send me a message</h3>
-        <div class="cf-grid"><label>Name<input name="name" type="text" required maxlength="80" autocomplete="name"><small class="cf-err"></small></label>
-        <label>Email<input name="email" type="email" required maxlength="120" autocomplete="email"><small class="cf-err"></small></label></div>
-        <label>Subject<input name="subject" type="text" required maxlength="120"><small class="cf-err"></small></label>
-        <label>Message<textarea name="message" rows="5" required maxlength="2000"></textarea><small class="cf-err"></small></label>
-        <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0">
-        <input type="hidden" name="_template" value="table">
-        <button class="btn btn-gold" id="cfSubmit" type="submit"><span class="cf-label">SEND MESSAGE</span><i class="cf-spin" aria-hidden="true"></i></button>
-        <p id="cfStatus" class="cf-status" role="status" aria-live="polite"></p>
-      </form>
+
+<form
+  id="contactForm"
+  class="contact-form"
+  name="contact"
+  method="POST"
+  action="https://formsubmit.co/amara2004ama@gmail.com"
+>
+  <input type="hidden" name="_subject" value="New Portfolio Contact Message">
+  <input type="hidden" name="_template" value="table">
+
+  <h3>Send me a message</h3>
+
+  <div class="cf-grid">
+    <label>
+      Name
+      <input name="name" type="text" required maxlength="80" autocomplete="name" placeholder="Your name">
+      <small class="cf-err"></small>
+    </label>
+
+    <label>
+      Email
+      <input name="email" type="email" required maxlength="120" autocomplete="email" placeholder="Your email">
+      <small class="cf-err"></small>
+    </label>
+  </div>
+
+  <label>
+    Subject
+    <input name="subject" type="text" required maxlength="120" placeholder="Message subject">
+    <small class="cf-err"></small>
+  </label>
+
+  <label>
+    Message
+    <textarea name="message" rows="5" required maxlength="2000" placeholder="Write your message..."></textarea>
+    <small class="cf-err"></small>
+  </label>
+
+  <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0">
+
+  <button class="btn btn-gold" id="cfSubmit" type="submit">
+    <span class="cf-label">SEND MESSAGE</span>
+    <i class="cf-spin" aria-hidden="true"></i>
+  </button>
+
+  <p id="cfStatus" class="cf-status" role="status" aria-live="polite"></p>
+</form>
+
 
       <div class="audio-panel"><div><span class="audio-icon">♫</span><span><b>CINEMATIC AUDIO</b><small>Epic Violin Cinematic Instrumental · plays on entry and loops</small></span></div><button id="soundToggle" class="sound-toggle" aria-pressed="false">▶ PLAY MUSIC</button><label class="volume-control">MUSIC VOLUME <input id="volumeControl" type="range" min="0" max="100" value="50" aria-label="Background sound volume"></label></div>
       <div class="resume-panel"><div><span class="resume-icon">▤</span><span><b>PLAYER DOCUMENT / RESUME</b><small>Amaravathi A | Computer Science &amp; Engineering</small></span></div><a id="resumeButton" href="Amaravathi-Resume.pdf" target="_blank" rel="noreferrer">OPEN RESUME ↗</a></div>
