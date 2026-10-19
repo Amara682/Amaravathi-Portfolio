@@ -130,7 +130,7 @@
   function fail(){failed=true;music.pause();setMsg(MISSING,true);showToast('MUSIC FILE COULD NOT LOAD');sync();}
   music.addEventListener('error',fail);
   ['play','pause','volumechange'].forEach(ev=>music.addEventListener(ev,sync));
-  music.src='assets/epic-violin.mp3';
+  music.src='epic-violin.mp3';
   function startSound(){
     if(failed){setMsg(MISSING,true);return;}
     const p=music.play();
