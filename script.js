@@ -211,61 +211,71 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.
 map.forEach((_,id)=>{const s=document.getElementById(id);if(s)io.observe(s)});})();
 
 
+
 /* Contact form: Netlify Forms */
 (() => {
-  const f = document.getElementById('contactForm');
-  if (!f) return;
+  const form = document.getElementById('contactForm');
 
-  const btn = document.getElementById('cfSubmit');
-  const st = document.getElementById('cfStatus');
+  if (!form) return;
 
-  const say = (message, type = '') => {
-    if (!st) return;
-    st.textContent = message;
-    st.className = 'cf-status ' + type;
-  };
+  const button = document.getElementById('cfSubmit');
+  const status = document.getElementById('cfStatus');
 
-  f.addEventListener('submit', async (e) => {
-    e.preventDefault();
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
 
-    if (!f.reportValidity()) return;
+    if (!form.reportValidity()) return;
 
-    const honey = f.querySelector('[name="_honey"]');
-    if (honey && honey.value) return;
+    const honeypot = form.querySelector('[name="_honey"]');
 
-    if (btn) btn.disabled = true;
-    say('Sending your message…');
+    if (honeypot && honeypot.value.trim() !== '') return;
+
+    if (button) button.disabled = true;
+
+    if (status) {
+      status.textContent = 'Sending your message...';
+      status.className = 'cf-status';
+    }
 
     try {
-      const data = new URLSearchParams(new FormData(f));
-      data.set('form-name', f.getAttribute('name') || 'contact');
+      const formData = new URLSearchParams(new FormData(form));
+      formData.set('form-name', 'contact');
 
       const response = await fetch('/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded'
         },
-        body: data.toString()
+        body: formData.toString()
       });
 
       if (!response.ok) {
-        throw new Error('HTTP ' + response.status);
+        throw new Error('HTTP status: ' + response.status);
       }
 
-      say('Submitted! Check Netlify Forms to confirm receipt.', 'ok');
-      f.reset();
+      if (status) {
+        status.textContent =
+          'Form submitted. Check Netlify Forms to confirm receipt.';
+        status.className = 'cf-status ok';
+      }
+
+      form.reset();
 
     } catch (error) {
-      console.error('Contact form error:', error);
-      say(
-        'Message NOT sent. Please email amara2004ama@gmail.com',
-        'err'
-      );
+      console.error('Contact form submission error:', error);
+
+      if (status) {
+        status.textContent =
+          'Message not sent. Please email amara2004ama@gmail.com';
+        status.className = 'cf-status err';
+      }
+
     } finally {
-      if (btn) btn.disabled = false;
+      if (button) button.disabled = false;
     }
   });
 })();
+
 
 
 
