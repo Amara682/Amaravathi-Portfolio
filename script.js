@@ -230,10 +230,22 @@ map.forEach((_,id)=>{const s=document.getElementById(id);if(s)io.observe(s)});})
     if(!ok){say('Please fix the highlighted fields.','err');first.focus();return;}
     if(f.elements._honey.value)return;
     busy=true;btn.disabled=true;f.setAttribute('aria-busy','true');lab.textContent='SENDING…';btn.classList.add('loading');say('Sending your message…','');
-    const ctl=new AbortController(),timer=setTimeout(()=>ctl.abort(),20000);
+const ctl = new AbortController();
+const timer = setTimeout(() => ctl.abort(), 45000);
     try{
       const fd=new FormData(f);fd.set('_subject','Portfolio message: '+f.elements.subject.value.trim());
       const res=await fetch(f.action.replace('formsubmit.co/','formsubmit.co/ajax/'),{method:'POST',headers:{Accept:'application/json'},body:fd,signal:ctl.signal});
+     const res = await fetch(
+  'https://formsubmit.co/ajax/amara2004ama@gmail.com',
+  {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json'
+    },
+    body: fd,
+    signal: ctl.signal
+  }
+);
       let d={};try{d=await res.json();}catch(_){}
       const msg=String(d.message||'');
       if(res.ok&&(d.success===true||d.success==='true')){
