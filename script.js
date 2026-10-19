@@ -210,5 +210,50 @@
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>{l.classList.remove('active');l.removeAttribute('aria-current')});const a=map.get(e.target.id);if(a){a.classList.add('active');a.setAttribute('aria-current','true')}}}),{rootMargin:'-45% 0px -50% 0px'});
 map.forEach((_,id)=>{const s=document.getElementById(id);if(s)io.observe(s)});})();
 
+/* Contact form: Netlify Forms */
+(() => {
+  const f = document.getElementById('contactForm');
+  if (!f) return;
+
+  const btn = document.getElementById('cfSubmit');
+  const st = document.getElementById('cfStatus');
+
+  const say = (message, type = '') => {
+    st.textContent = message;
+    st.className = 'cf-status ' + type;
+  };
+
+  f.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    if (!f.reportValidity()) return;
+
+    if (f.elements._honey && f.elements._honey.value) return;
+
+    btn.disabled = true;
+    say('Sending your message…');
+
+    const data = new FormData(f);
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(data).toString()
+    })
+    .then((response) => {
+      if (!response.ok) throw new Error('Submission failed');
+
+      say('Message submitted successfully! Thank you.', 'ok');
+      f.reset();
+    })
+    .catch(() => {
+      say('Message NOT sent. Please try again or email directly: amara2004ama@gmail.com', 'err');
+    })
+    .finally(() => {
+      btn.disabled = false;
+    });
+  });
+})();
+
 
 
