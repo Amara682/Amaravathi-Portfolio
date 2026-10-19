@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050d1a">
+<meta name="description" content="Amaravathi A — Full Stack Developer and AI/ML explorer. Enter the developer's realm.">
+<title>AMARAVATHI // Developer Realm</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="is-loading">
+<div class="boot-screen" id="bootScreen">
+  <div class="boot-stars"></div><div class="boot-emblem">A</div>
+  <p class="boot-kicker">SIGNAL LOST · SOMETHING IS WATCHING</p><h1>AMARAVATHI</h1>
+  <div class="loading-track"><span id="loadingBar"></span></div><p class="loading-label" id="loadingLabel">INITIALIZING DEVELOPER REALM · 0%</p>
+  <button class="enter-button" id="enterRealm" disabled>ENTER IF YOU DARE <span>↗</span></button>
+  <p class="boot-hint">CINEMATIC AMBIENCE · ENABLE SOUND AFTER ENTERING</p>
+</div>
+<div class="site-shell" id="siteShell">
+  <canvas id="starfield" aria-hidden="true"></canvas><div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#home"><span class="brand-symbol">A</span><span>AMARAVATHI<span class="gold">.EXE</span></span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav id="mainNav"><a href="#home">HOME</a><a href="#visuals">VISUALS</a><a href="#about">ABOUT</a><a href="#skills">SKILLS</a><a href="#journey">EXPERIENCE</a><a href="#missions">PROJECTS</a><a href="#certifications">CERTIFICATES</a><a href="#contact">CONTACT</a></nav>
+    <div class="hud-right"><span class="live-dot"></span><span>PLAYER ONLINE</span><button id="motionToggle" class="motion-toggle" title="Pause/resume animation">Ⅱ</button></div>
+  </header>
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-slideshow" id="heroSlideshow" aria-label="Cinematic portfolio image slideshow">
+        <div class="slide-image active" style="--slide-image:url('https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=2200&q=90')"></div>
+        <div class="slide-image" style="--slide-image:url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=2200&q=90')"></div>
+        <div class="slide-image" style="--slide-image:url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2200&q=90')"></div>
+        <div class="slide-image" style="--slide-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2200&q=90')"></div>
+        <div class="slide-shade"></div>
+      </div><div class="hero-grid"></div><div class="planet-ring ring-one"></div><div class="planet-ring ring-two"></div><div class="planet"></div>
+      <div class="hero-land land-back"></div><div class="hero-land land-front"></div>
+      <div class="hero-content reveal visible">
+        <div class="quest-pill"><span class="quest-star">✦</span> PLAYER 001 <span class="pill-divider"></span> DEVELOPER CLASS</div>
+        <p class="hero-pretitle">SIGNAL FOUND · WORLD ONLINE</p><h1>AMARAVATHI <span>A.</span></h1>
+        <div class="hero-title-line"><span></span><p>THE NEON FRONTIER</p><span></span></div>
+        <p class="hero-description">I build digital experiences where logic meets imagination.<br class="desktop-break"> Step into the dark. Discover what I create.</p>
+        <p class="hero-role">Computer Science &amp; Engineering Student | Aspiring Software Developer</p><div class="class-tags"><span>FULL STACK DEVELOPER</span><b>✧</b><span>AI / ML EXPLORER</span></div>
+        <div class="hero-buttons"><a class="btn btn-gold" href="#missions"><span>✦</span> BEGIN THE INVESTIGATION <b>↗</b></a><a class="btn btn-outline" href="assets/Amaravathi-Resume.pdf" download="Amaravathi_A_Resume.pdf">DOWNLOAD RESUME <span>↓</span></a><a class="btn btn-outline" href="#contact">CONTACT ME</a><a class="btn btn-outline" href="#about">INSPECT THE UNKNOWN <span>↓</span></a></div>
+        <div class="player-status"><span class="pulse-dot"></span> B.E. COMPUTER SCIENCE · MADURAI, INDIA <span class="status-divider">/</span> OPEN TO LEARNING & COLLABORATION</div>
+      </div>
+      <div class="slide-controls"><button id="slidePrev" aria-label="Previous cinematic image">←</button><div class="slide-dots" id="slideDots"><button class="active" aria-label="Show image 1"></button><button aria-label="Show image 2"></button><button aria-label="Show image 3"></button><button aria-label="Show image 4"></button></div><button id="slideNext" aria-label="Next cinematic image">→</button><span id="slideCounter">01 / 04</span></div>
+      <div class="side-label side-left">CREATE / BUILD / DISCOVER</div><div class="side-label side-right">SCROLL TO EXPLORE ↓</div>
+      <div class="hero-bottom"><span>WORLD 01 — THE BEGINNING</span><span>EST. 2024 <i>✦</i> CONTINUOUSLY EVOLVING</span></div>
+    </section>
+    <section class="cinematic-gallery" id="visuals">
+      <div class="gallery-heading"><span class="section-kicker">VISUAL ARCHIVE / CINEMATIC MODE</span><h2>Scroll through the <em>unknown.</em></h2><p>Move your cursor across the frames. The scene reacts to you.</p></div>
+      <div class="gallery-rail">
+        <article class="visual-card visual-one"><div class="visual-photo"></div><span class="visual-number">FRAME 01</span><div class="visual-caption"><small>THE SIGNAL</small><h3>Something is out there.</h3></div></article>
+        <article class="visual-card visual-two"><div class="visual-photo"></div><span class="visual-number">FRAME 02</span><div class="visual-caption"><small>THE UNKNOWN</small><h3>Follow the blue signal.</h3></div></article>
+        <article class="visual-card visual-three"><div class="visual-photo"></div><span class="visual-number">FRAME 03</span><div class="visual-caption"><small>THE DEEP</small><h3>Every layer hides a story.</h3></div></article>
+      </div>
+    </section>
+    <section class="play-section" id="play">
+      <div class="play-header"><div><p class="eyebrow">INTERACTIVE SIDE QUEST / PLAYABLE DEMO</p><h2>Enter the <em>training arena.</em></h2><p>Move your explorer, collect five energy shards, and unlock your first XP reward.</p></div><div class="game-hud"><span>PLAYER <b>001</b></span><span>XP <b id="xpValue">000</b></span><span>SHARDS <b id="shardValue">0 / 5</b></span></div></div>
+      <div class="game-arena" id="gameArena" tabindex="0" aria-label="Mini game arena. Use arrow keys or WASD to move the explorer and collect glowing shards.">
+        <div class="arena-sky-grid"></div><div class="arena-moon"></div><div class="arena-scanline"></div>
+        <div class="arena-sign">THE NEON SECTOR <span>ZONE 01</span></div>
+        <div class="game-platform platform-one"></div><div class="game-platform platform-two"></div><div class="game-platform platform-three"></div>
+        <div class="explorer" id="explorer" style="left:8%;top:67%"><span class="explorer-glow"></span><span class="explorer-body">♟</span><span class="explorer-label">YOU</span></div>
+        <div class="shard" data-shard="0" style="left:24%;top:55%">✦</div><div class="shard" data-shard="1" style="left:42%;top:34%">✦</div><div class="shard" data-shard="2" style="left:61%;top:58%">✦</div><div class="shard" data-shard="3" style="left:77%;top:29%">✦</div><div class="shard" data-shard="4" style="left:88%;top:66%">✦</div>
+        <div class="arena-message" id="arenaMessage"><span>✦</span><b>QUEST OBJECTIVE</b><small>Collect all 5 energy shards</small><button id="startQuest">START QUEST <i>↗</i></button></div>
+        <div class="arena-controls"><span>MOVE <b>W A S D</b> / <b>↑ ↓ ← →</b></span><span>COLLECT <b>TOUCH THE SHARDS</b></span><div class="touch-controls" aria-label="Touch movement controls"><button data-move="up" aria-label="Move up">↑</button><button data-move="left" aria-label="Move left">←</button><button data-move="down" aria-label="Move down">↓</button><button data-move="right" aria-label="Move right">→</button></div><button id="resetQuest">↻ RESET</button></div>
+      </div>
+      <div class="quest-reward" id="questReward"><span class="reward-icon">✧</span><span><b>QUEST COMPLETE — +100 XP</b><small>You collected every shard. More adventures await below.</small></span><button id="claimReward">CLAIM REWARD</button></div>
+    </section>
+    <section class="section profile-section" id="about">
+      <div class="section-top"><span class="section-index">01</span><span class="section-kicker">PLAYER PROFILE / ORIGIN STORY</span><span class="section-line"></span></div>
+      <div class="profile-grid"><div class="profile-heading reveal"><p class="eyebrow">THE STORY SO FAR</p><h2>Curiosity is my<br><em>starting point.</em></h2><div class="ornament">✦ ━━━━━━━━━ ✦</div></div>
+        <div class="profile-copy reveal"><p>I'm Amaravathi, a Computer Science and Engineering student who loves learning by building. I explore full-stack development, database-backed applications, and AI/ML ideas that connect technology with real-world needs.</p><p>My approach is simple: understand the problem, build a thoughtful solution, test it, and keep improving.</p><a class="under-link" href="#journey">UNLOCK MY JOURNEY <span>↗</span></a></div></div>
+      <div class="stats-grid"><div class="stat-card reveal"><span class="stat-icon">⌘</span><strong data-count="3">0</strong><small>DEVELOPMENT / AI EXPERIENCES</small><span class="stat-bottom">QUEST LOG <i>01</i></span></div><div class="stat-card reveal"><span class="stat-icon">◇</span><strong data-count="4">0</strong><small>PROJECTS & PROTOTYPES</small><span class="stat-bottom">QUEST LOG <i>02</i></span></div><div class="stat-card reveal"><span class="stat-icon">✧</span><strong data-count="28">0</strong><small>SKILLS TO KEEP LEVELING UP</small><span class="stat-bottom">QUEST LOG <i>03</i></span></div><div class="stat-card reveal"><span class="stat-icon">∞</span><strong>∞</strong><small>ROOM TO GROW</small><span class="stat-bottom">QUEST LOG <i>04</i></span></div></div>
+    </section>
+    <section class="section skills-section" id="skills">
+      <div class="section-top"><span class="section-index">02</span><span class="section-kicker">ABILITIES / EQUIPMENT</span><span class="section-line"></span></div>
+      <div class="section-heading reveal"><div><p class="eyebrow">CHOOSE YOUR LOADOUT</p><h2>Tools of the <em>trade.</em></h2></div><p>My current toolkit for designing, developing, and experimenting. Skill levels are learning indicators, not formal assessments.</p></div>
+      <div class="skill-grid">
+        <article class="skill-card reveal"><div class="skill-card-top"><span class="skill-icon">⌘</span><span class="rarity">COMMON · LV. 03</span></div><h3>Frontend Craft</h3><p>Responsive interfaces, clear layouts, and interactive experiences.</p><div class="skill-list"><div><span>HTML / CSS</span><span>IN PRACTICE</span></div><div class="xp"><span style="--xp:82%"></span></div><div><span>JavaScript</span><span>IN PRACTICE</span></div><div class="xp"><span style="--xp:66%"></span></div><div><span>Bootstrap / React</span><span>LEARNING</span></div><div class="xp"><span style="--xp:58%"></span></div></div></article>
+        <article class="skill-card rare reveal"><div class="skill-card-top"><span class="skill-icon">⌬</span><span class="rarity">RARE · LV. 04</span></div><h3>Backend & Data</h3><p>Application logic, connected workflows, and persistent data.</p><div class="skill-list"><div><span>Java</span><span>IN PRACTICE</span></div><div class="xp"><span style="--xp:74%"></span></div><div><span>Spring Boot</span><span>IN PRACTICE</span></div><div class="xp"><span style="--xp:67%"></span></div><div><span>MySQL / Git</span><span>IN PRACTICE</span></div><div class="xp"><span style="--xp:69%"></span></div></div></article>
+        <article class="skill-card epic reveal"><div class="skill-card-top"><span class="skill-icon">✧</span><span class="rarity">EPIC · LV. 02</span></div><h3>AI / ML Lab</h3><p>Experiments with prediction, text analysis, and multimodal learning.</p><div class="skill-list"><div><span>Python / Scikit-learn</span><span>IN PRACTICE</span></div><div class="xp"><span style="--xp:73%"></span></div><div><span>PyTorch</span><span>LEARNING</span></div><div class="xp"><span style="--xp:55%"></span></div><div><span>NLP / Streamlit</span><span>IN PRACTICE</span></div><div class="xp"><span style="--xp:65%"></span></div></div></article>
+      </div><p class="fine-print">* Skill bars are illustrative visuals, not verified proficiency scores.</p>
+    </section>
+    <section class="section journey-section" id="journey">
+      <div class="section-top"><span class="section-index">03</span><span class="section-kicker">JOURNEY / EXPERIENCE LOG</span><span class="section-line"></span></div>
+      <div class="section-heading reveal"><div><p class="eyebrow">EVERY QUEST BUILDS EXPERIENCE</p><h2>Learning through<br><em>real projects.</em></h2></div><p>Internships and hands-on work that helped me explore development and AI/ML. Update the details to match your certificates.</p></div>
+      <div class="timeline">
+        <article class="timeline-entry reveal"><div class="timeline-date">2026 <span>AI / ML</span></div><div class="timeline-pin">✦</div><div class="timeline-panel"><div class="panel-head"><span class="panel-type">INTERNSHIP QUEST</span><span class="panel-status">COMPLETED</span></div><h3>Elysium Technologies Pvt. Ltd.</h3><p>Worked on House Price Prediction and Sentiment Analysis projects using Python, machine-learning workflows, and Streamlit interfaces.</p><div class="tag-row"><span>PYTHON</span><span>SCIKIT-LEARN</span><span>NLP</span><span>STREAMLIT</span></div></div></article>
+        <article class="timeline-entry reveal"><div class="timeline-date">2026 <span>FULL STACK</span></div><div class="timeline-pin">✦</div><div class="timeline-panel"><div class="panel-head"><span class="panel-type">APPLICATION QUEST</span><span class="panel-status">PROJECT EXPERIENCE</span></div><h3>BitBerry Technology</h3><p>Explored Java full-stack development and database-connected application workflows, including a health-monitoring application concept.</p><div class="tag-row"><span>JAVA</span><span>SPRING BOOT</span><span>MYSQL</span><span>THYMELEAF</span></div></div></article>
+        <article class="timeline-entry reveal"><div class="timeline-date">2025 <span>WEB DEV</span></div><div class="timeline-pin">✦</div><div class="timeline-panel"><div class="panel-head"><span class="panel-type">WEB DEVELOPMENT QUEST</span><span class="panel-status">COMPLETED</span></div><h3>BitBerry Technology</h3><p>Created a responsive restaurant website and explored interactive UI development and data-connected features.</p><div class="tag-row"><span>HTML</span><span>CSS</span><span>JAVASCRIPT</span><span>BOOTSTRAP</span></div><a class="under-link" href="https://nawaabrestaurant.infinityfreeapp.com/index.html?i=3" target="_blank" rel="noreferrer">OPEN LIVE DEMO ↗</a></div></article>
+      </div>
+    </section>
+    <section class="section missions-section" id="missions">
+      <div class="section-top"><span class="section-index">04</span><span class="section-kicker">MISSIONS / PROJECT INVENTORY</span><span class="section-line"></span></div>
+      <div class="section-heading reveal"><div><p class="eyebrow">SELECT A MISSION TO INSPECT</p><h2>Ideas in <em>action.</em></h2></div><p>Tap a project card to open its details. Add your real repository and live-demo links before publishing.</p></div>
+      <div class="mission-grid">
+        <button class="mission-card reveal" data-project="care"><div class="mission-art care-art"><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><span class="art-glyph">✚</span><span class="art-index">MISSION / 01</span></div><div class="mission-content"><div class="mission-meta"><span>HEALTH TECH</span><span>↗ INSPECT</span></div><h3>CareTwin Chennai</h3><p>Personalized healthcare navigation concept with affordability and service matching.</p><div class="tag-row"><span>AI AGENTS</span><span>HEALTHCARE</span><span>STREAMLIT</span></div></div></button>
+        <button class="mission-card reveal" data-project="earth"><div class="mission-art earth-art"><div class="earth-planet"></div><span class="art-index">MISSION / 02</span></div><div class="mission-content"><div class="mission-meta"><span>EARTH OBSERVATION</span><span>↗ INSPECT</span></div><h3>Multimodal Land-Cover AI</h3><p>Direct-token fusion research for land-cover classification under missing or degraded modalities.</p><div class="tag-row"><span>PYTORCH</span><span>SENTINEL-1/2</span><span>REMOTE SENSING</span></div></div></button>
+        <button class="mission-card reveal" data-project="hospital"><div class="mission-art hospital-art"><div class="medical-cross">+</div><span class="art-index">MISSION / 03</span></div><div class="mission-content"><div class="mission-meta"><span>FULL STACK</span><span>↗ INSPECT</span></div><h3>MediCare Hospital Platform</h3><p>Hospital workflow concept with patient registration, appointment management, and record-oriented pages.</p><div class="tag-row"><span>JAVA</span><span>SPRING BOOT</span><span>MYSQL</span></div></div></button>
+        <button class="mission-card reveal" data-project="ml"><div class="mission-art ml-art"><div class="ai-emblem">AI<span>✧</span></div><span class="art-index">MISSION / 04</span></div><div class="mission-content"><div class="mission-meta"><span>MACHINE LEARNING</span><span>↗ INSPECT</span></div><h3>Prediction & Sentiment Lab</h3><p>House-price regression and text sentiment classification experiments with interactive demos.</p><div class="tag-row"><span>PYTHON</span><span>REGRESSION</span><span>NLP</span></div></div></button>
+      </div>
+    </section>
+    <section class="section trophy-section" id="certifications">
+      <div class="section-top"><span class="section-index">05</span><span class="section-kicker">ACHIEVEMENTS / KNOWLEDGE ARCHIVE</span><span class="section-line"></span></div>
+      <div class="section-heading reveal"><div><p class="eyebrow">COLLECTED ALONG THE WAY</p><h2>Small wins.<br><em>Stronger skills.</em></h2></div><p>Replace these sample entries with the exact certificate names, issuers, and credential links from your profile.</p></div>
+      <div class="trophy-list"><div class="trophy-row reveal"><span class="trophy-icon">✧</span><div><b>Generative AI: Introduction and Its Applications</b><small>IBM / GENERATIVE AI</small></div><span class="trophy-rank">AI</span></div><div class="trophy-row reveal"><span class="trophy-icon">✧</span><div><b>Problem Solving Through Programming in C</b><small>NPTEL / PROGRAMMING</small></div><span class="trophy-rank">C</span></div><div class="trophy-row reveal"><span class="trophy-icon">✧</span><div><b>Introduction to Network Automation</b><small>CISCO / NETWORKING</small></div><span class="trophy-rank">NET</span></div><div class="trophy-row reveal"><span class="trophy-icon">✧</span><div><b>Additional certifications and learning milestones</b><small>SEE LINKEDIN FOR THE LATEST LIST</small></div><span class="trophy-rank">+3</span></div></div>
+    </section>
+    <section class="contact-section" id="contact"><div class="contact-portal"></div><div class="section-kicker">FINAL QUEST / CONNECTION ESTABLISHED</div><p class="eyebrow">GOOD THINGS START WITH A CONVERSATION</p><h2>Let's create the<br><em>next great thing.</em></h2><p class="contact-copy">Open to learning, meaningful projects, internships, and collaboration.</p>
+      <div class="contact-buttons"><a class="btn btn-gold" href="mailto:amara2004ama@gmail.com><span>✉</span> SEND A MESSAGE <b>↗</b></a><a class="btn btn-outline" href="https://www.linkedin.com/in/amaravathi-a-893931335/" target="_blank" rel="noreferrer">LINKEDIN ↗</a><a class="btn btn-outline" href="https://github.com/Amara682" target="_blank" rel="noreferrer">GITHUB ↗</a></div>
+      <form id="contactForm" class="contact-form" action="https://formsubmit.co/amara2004ama@gmail.com" method="POST" novalidate>
+        <h3>Send me a message</h3>
+        <div class="cf-grid"><label>Name<input name="name" type="text" required maxlength="80" autocomplete="name"><small class="cf-err"></small></label>
+        <label>Email<input name="email" type="email" required maxlength="120" autocomplete="email"><small class="cf-err"></small></label></div>
+        <label>Subject<input name="subject" type="text" required maxlength="120"><small class="cf-err"></small></label>
+        <label>Message<textarea name="message" rows="5" required maxlength="2000"></textarea><small class="cf-err"></small></label>
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0">
+        <input type="hidden" name="_template" value="table">
+        <button class="btn btn-gold" id="cfSubmit" type="submit"><span class="cf-label">SEND MESSAGE</span><i class="cf-spin" aria-hidden="true"></i></button>
+        <p id="cfStatus" class="cf-status" role="status" aria-live="polite"></p>
+      </form>
+      <div class="audio-panel"><div><span class="audio-icon">♫</span><span><b>CINEMATIC AUDIO</b><small>Epic Violin Cinematic Instrumental · plays on entry and loops</small></span></div><button id="soundToggle" class="sound-toggle" aria-pressed="false">▶ PLAY MUSIC</button><label class="volume-control">MUSIC VOLUME <input id="volumeControl" type="range" min="0" max="100" value="50" aria-label="Background sound volume"></label></div>
+      <div class="resume-panel"><div><span class="resume-icon">▤</span><span><b>PLAYER DOCUMENT / RESUME</b><small>Amaravathi A | Computer Science &amp; Engineering</small></span></div><a id="resumeButton" href="assets/Amaravathi-Resume.pdf" target="_blank" rel="noreferrer">OPEN RESUME ↗</a></div>
+    </section>
+  </main>
+  <footer><a class="brand" href="#home"><span class="brand-symbol">A</span><span>AMARAVATHI<span class="gold">.EXE</span></span></a><span>BUILT WITH CURIOSITY & CODE</span><span>© <span id="year"></span> AMARAVATHI A</span></footer>
+</div>
+<div class="music-dock" id="musicDock" role="group" aria-label="Background music controls"><span class="eq" aria-hidden="true"><b></b><b></b><b></b><b></b></span><button id="dockPlay" type="button" aria-label="Play music">▶</button><button id="dockMute" type="button" aria-label="Mute music" aria-pressed="false">🔊</button><input id="dockVol" type="range" min="0" max="100" value="50" aria-label="Music volume"><span id="dockMsg" class="dock-msg" role="status" aria-live="polite">Epic Violin</span></div>
+<div class="project-modal" id="projectModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-backdrop" data-close-modal></div><div class="modal-panel"><button class="modal-close" id="modalClose" aria-label="Close project details">×</button><span class="section-kicker" id="modalKicker">MISSION DETAILS</span><h2 id="modalTitle">Project title</h2><p id="modalDescription"></p><div class="modal-tags" id="modalTags"></div><div class="modal-actions"><a class="btn btn-gold" id="modalLink" href="#contact">DISCUSS THIS PROJECT ↗</a><button class="btn btn-outline" id="modalDone">BACK TO MISSIONS</button></div></div></div>
+<button class="back-top" id="backTop" aria-label="Back to top">↑</button><div class="toast" id="toast" role="status"></div>
+<script src="script.js"></script>
+</body></html>
