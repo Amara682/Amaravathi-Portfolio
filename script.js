@@ -113,7 +113,7 @@
   let soundOn=false;
   const soundToggle=$('#soundToggle'), volume=$('#volumeControl'), dockPlay=$('#dockPlay'), dockMute=$('#dockMute'), dockVol=$('#dockVol'), dockMsg=$('#dockMsg'), dock=$('#musicDock');
   const store={get:k=>{try{return localStorage.getItem(k)}catch(e){return null}},set:(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}}};
-  const MISSING='Music file not found. Download the track from Pixabay and save it as assets/epic-violin.mp3, then reload.';
+  const MISSING='Music file not found. Download the track from Pixabay and save it as epic-violin.mp3, then reload.';
   const music=new Audio();let failed=false;
   music.loop=true;music.preload='auto';
   const savedVol=store.get('bgmVol');const startVol=savedVol===null?50:Math.max(0,Math.min(100,Number(savedVol)||0));
