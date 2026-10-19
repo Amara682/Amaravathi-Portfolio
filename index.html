@@ -124,14 +124,44 @@
   data-netlify-honeypot="_honey"
   class="contact-form"
 >
-  <input type="hidden" name="form-name" value="contact">
-        <h3>Send me a message</h3>
-        <div class="cf-grid"><label>Name<input name="name" type="text" required maxlength="80" autocomplete="name"><small class="cf-err"></small></label>
-        <label>Email<input name="email" type="email" required maxlength="120" autocomplete="email"><small class="cf-err"></small></label></div>
-        <label>Subject<input name="subject" type="text" required maxlength="120"><small class="cf-err"></small></label>
-        <label>Message<textarea name="message" rows="5" required maxlength="2000"></textarea><small class="cf-err"></small></label>
-        <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0">
-        
+<input type="hidden" name="form-name" value="contact">
+
+<h3>Send me a message</h3>
+
+<div class="cf-grid">
+  <label>
+    Name
+    <input name="name" type="text" required maxlength="80" autocomplete="name">
+    <small class="cf-err"></small>
+  </label>
+
+  <label>
+    Email
+    <input name="email" type="email" required maxlength="120" autocomplete="email">
+    <small class="cf-err"></small>
+  </label>
+</div>
+
+<label>
+  Subject
+  <input name="subject" type="text" required maxlength="120">
+  <small class="cf-err"></small>
+</label>
+
+<label>
+  Message
+  <textarea name="message" rows="5" required maxlength="2000"></textarea>
+  <small class="cf-err"></small>
+</label>
+
+<input
+  type="text"
+  name="_honey"
+  tabindex="-1"
+  autocomplete="off"
+  aria-hidden="true"
+  style="position:absolute;left:-9999px;opacity:0"
+>
         <button class="btn btn-gold" id="cfSubmit" type="submit"><span class="cf-label">SEND MESSAGE</span><i class="cf-spin" aria-hidden="true"></i></button>
         <p id="cfStatus" class="cf-status" role="status" aria-live="polite"></p>
       </form>
