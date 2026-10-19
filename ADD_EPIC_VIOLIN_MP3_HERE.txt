@@ -1,0 +1,5 @@
+The real track is NOT bundled (it could not be downloaded automatically).
+1. Open https://pixabay.com/music/main-title-epic-violin-cinematic-instrumental-music-283511/
+2. Click Download and save the MP3.
+3. Rename it exactly: epic-violin.mp3
+4. Put it in THIS folder (assets/) next to Amaravathi-Resume.pdf, then reload the site.
