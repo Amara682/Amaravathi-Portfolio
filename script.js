@@ -212,66 +212,36 @@ map.forEach((_,id)=>{const s=document.getElementById(id);if(s)io.observe(s)});})
 
 
 
-/* Contact form: Netlify Forms */
+
+/* Contact form: FormSubmit */
 (() => {
   const form = document.getElementById('contactForm');
-
   if (!form) return;
 
   const button = document.getElementById('cfSubmit');
   const status = document.getElementById('cfStatus');
 
-  form.addEventListener('submit', async (event) => {
-    event.preventDefault();
-
-    if (!form.reportValidity()) return;
+  form.addEventListener('submit', (event) => {
+    if (!form.reportValidity()) {
+      event.preventDefault();
+      return;
+    }
 
     const honeypot = form.querySelector('[name="_honey"]');
+    if (honeypot && honeypot.value.trim() !== '') {
+      event.preventDefault();
+      return;
+    }
 
-    if (honeypot && honeypot.value.trim() !== '') return;
-
-    if (button) button.disabled = true;
+    if (button) {
+      button.disabled = true;
+      const label = button.querySelector('.cf-label');
+      if (label) label.textContent = 'SENDING...';
+    }
 
     if (status) {
       status.textContent = 'Sending your message...';
       status.className = 'cf-status';
-    }
-
-    try {
-      const formData = new URLSearchParams(new FormData(form));
-      formData.set('form-name', 'contact');
-
-      const response = await fetch('/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        body: formData.toString()
-      });
-
-      if (!response.ok) {
-        throw new Error('HTTP status: ' + response.status);
-      }
-
-      if (status) {
-        status.textContent =
-          'Form submitted. Check Netlify Forms to confirm receipt.';
-        status.className = 'cf-status ok';
-      }
-
-      form.reset();
-
-    } catch (error) {
-      console.error('Contact form submission error:', error);
-
-      if (status) {
-        status.textContent =
-          'Message not sent. Please email amara2004ama@gmail.com';
-        status.className = 'cf-status err';
-      }
-
-    } finally {
-      if (button) button.disabled = false;
     }
   });
 })();
